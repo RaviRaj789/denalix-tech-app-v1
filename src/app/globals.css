@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  background-color: #08090c;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-margin-top: 4.5rem;
+}
+
+/* Fade section backgrounds into the shared base color so scrolling
+   between sections blends instead of cutting hard at the boundary. */
+.edge-fade-top {
+  mask-image: linear-gradient(to bottom, transparent, black 20%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%);
+}
+
+.edge-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+.edge-fade-both {
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+}
+
+::selection {
+  background: #a855f7;
+  color: #08090c;
+}
+
+/* Ambient background blobs */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.15); }
+}
+
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, 6%) scale(1.1); }
+}
+
+@keyframes drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -6%) scale(1.08); }
+}
+
+.animate-drift-a {
+  animation: drift-a 22s ease-in-out infinite;
+}
+
+.animate-drift-b {
+  animation: drift-b 26s ease-in-out infinite;
+}
+
+.animate-drift-c {
+  animation: drift-c 30s ease-in-out infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shine sweep on hover */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.16) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.9s ease;
+  pointer-events: none;
+}
+
+.shine:hover::after {
+  left: 130%;
+}
+
+/* Buttons that shine on their own every few seconds, without needing hover or a cursor-magnet wrapper. */
+.shine-periodic {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-periodic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: shine-periodic-sweep 4.5s ease-in-out infinite;
+}
+
+@keyframes shine-periodic-sweep {
+  0% {
+    left: -60%;
+  }
+  18% {
+    left: 130%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift-a,
+  .animate-drift-b,
+  .animate-drift-c {
+    animation: none;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .shine-periodic::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* StarBorder submit button, themed to the site's purple accent */
+.consult-star-border .inner-content {
+  background: #a855f7;
+  color: #08090c;
+  border: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.consult-star-border:hover .inner-content {
+  background: #c084fc;
 }
