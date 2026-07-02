@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="snap-section relative flex min-h-screen items-center overflow-hidden bg-[#08090c] py-20"
+      className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c] py-20"
     >
       <div className="edge-fade-both pointer-events-none absolute inset-0">
         <DotField

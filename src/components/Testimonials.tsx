@@ -103,7 +103,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="snap-section flex min-h-screen items-center"
+      className="snap-section flex min-h-dvh items-center"
     >
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
         <SplitText

@@ -14,7 +14,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="snap-section relative flex min-h-screen items-center overflow-hidden bg-[#08090c]"
+      className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
       <div className="edge-fade-both pointer-events-none absolute inset-0 opacity-60">
         <SoftAurora

@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="snap-section relative flex min-h-screen items-center overflow-hidden bg-[#08090c]"
+      className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
       <div className="edge-fade-bottom absolute inset-0">
         <LineWaves
@@ -49,17 +49,30 @@ export default function Hero() {
 
       <div className="pointer-events-none relative mx-auto grid w-full max-w-6xl items-center gap-12 px-6 pb-28 pt-24 sm:pt-32 lg:grid-cols-[1fr_420px]">
         <div className="max-w-xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
-            <TextType
-              as="span"
-              text={["Digital foundation for businesses ready to move faster"]}
-              typingSpeed={35}
-              loop={false}
-              startOnVisible
-              showCursor
-              cursorCharacter="_"
-            />
+          <div className="mb-6 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple-400" />
+            <span className="sm:hidden">
+              <TextType
+                as="span"
+                text={["Built to move faster"]}
+                typingSpeed={35}
+                loop={false}
+                startOnVisible
+                showCursor
+                cursorCharacter="_"
+              />
+            </span>
+            <span className="hidden sm:inline">
+              <TextType
+                as="span"
+                text={["Digital foundation for businesses ready to move faster"]}
+                typingSpeed={35}
+                loop={false}
+                startOnVisible
+                showCursor
+                cursorCharacter="_"
+              />
+            </span>
           </div>
           <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-7xl">
             <SplitText
