@@ -4,6 +4,24 @@ import Reveal from "@/components/effects/Reveal";
 import SplitText from "@/components/effects/SplitText";
 import BlurText from "@/components/effects/BlurText";
 import TextType from "@/components/effects/TextType";
+import BorderGlow from "@/components/effects/BorderGlow";
+import { ServiceIcon, WhyIcon } from "@/components/icons";
+
+const heroHighlights: {
+  label: string;
+  icon: { kind: "why"; name: "speed" | "explain" | "connect" } | { kind: "service"; name: "analytics" };
+}[] = [
+  { label: "Less manual work", icon: { kind: "why", name: "speed" } },
+  { label: "Clearer operations", icon: { kind: "why", name: "explain" } },
+  { label: "Better decisions", icon: { kind: "service", name: "analytics" } },
+  { label: "Smoother customer service", icon: { kind: "why", name: "connect" } },
+];
+
+const heroMilestones = [
+  { step: "01", label: "audit the leaks" },
+  { step: "02", label: "map the roadmap" },
+  { step: "03", label: "build to scale" },
+];
 
 export default function Hero() {
   return (
@@ -29,8 +47,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="pointer-events-none relative mx-auto max-w-6xl px-6 pb-28 pt-24 sm:pt-32">
-        <div className="max-w-3xl">
+      <div className="pointer-events-none relative mx-auto grid w-full max-w-6xl items-center gap-12 px-6 pb-28 pt-24 sm:pt-32 lg:grid-cols-[1fr_420px]">
+        <div className="max-w-xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
             <TextType
@@ -91,6 +109,66 @@ export default function Hero() {
             </a>
           </Reveal>
         </div>
+
+        <Reveal className="pointer-events-auto" delay={150}>
+          <BorderGlow
+            backgroundColor="rgba(10, 11, 16, 0.78)"
+            borderRadius={24}
+            glowRadius={30}
+            glowIntensity={0}
+            edgeSensitivity={35}
+            glowColor="271 91% 65%"
+            colors={["#a855f7", "#e879f9", "#c084fc"]}
+            fillOpacity={0}
+          >
+            <div className="p-6 sm:p-7">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-display text-lg font-semibold text-purple-300">
+                    Business Growth System
+                  </p>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    Operations, customers, data, and delivery aligned
+                  </p>
+                </div>
+                <span className="mt-1 flex shrink-0 items-center gap-1.5 text-xs font-medium text-emerald-300">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                  Live
+                </span>
+              </div>
+
+              <div className="mt-6 space-y-3">
+                {heroHighlights.map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3"
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-purple-400/30 bg-purple-500/10 text-purple-300">
+                      {item.icon.kind === "why" ? (
+                        <WhyIcon name={item.icon.name} className="h-4 w-4" />
+                      ) : (
+                        <ServiceIcon name={item.icon.name} className="h-4 w-4" />
+                      )}
+                    </span>
+                    <span className="text-sm font-medium text-zinc-100">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 grid grid-cols-3 gap-3">
+                {heroMilestones.map((m) => (
+                  <div
+                    key={m.step}
+                    className="rounded-xl border border-white/10 bg-white/[0.02] px-3 py-4 text-center"
+                  >
+                    <p className="font-display text-xl font-semibold text-white">{m.step}</p>
+                    <p className="mt-1 text-[11px] leading-tight text-zinc-400">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </BorderGlow>
+        </Reveal>
       </div>
     </section>
   );
