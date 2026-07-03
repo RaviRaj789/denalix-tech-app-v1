@@ -32,15 +32,15 @@ export default function Hero() {
     >
       <div className="pointer-events-none absolute inset-0 sm:hidden">
         <Ferrofluid
-          colors={["#ffffff", "#a855f7", "#ffffff"]}
-          speed={0.5}
+          colors={["#ffffff", "#ffffff", "#ffffff"]}
+          speed={0.1}
           scale={1}
           turbulence={1}
           fluidity={0.1}
           rimWidth={0.2}
           sharpness={3}
           shimmer={1}
-          glow={2}
+          glow={1}
           flowDirection="down"
           opacity={1}
           mouseInteraction

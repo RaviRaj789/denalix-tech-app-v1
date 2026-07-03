@@ -7,7 +7,7 @@ import Reveal from "@/components/effects/Reveal";
 import BorderGlow from "@/components/effects/BorderGlow";
 import ColorBends from "@/components/effects/ColorBends";
 import DotField from "@/components/effects/DotField";
-import Ferrofluid from "@/components/effects/Ferrofluid";
+import SideRays from "@/components/effects/SideRays";
 import LogoLoop from "@/components/effects/LogoLoop";
 import { WhyIcon } from "@/components/icons";
 
@@ -47,21 +47,18 @@ export default function WhyUs() {
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
       <div className="pointer-events-none absolute inset-0 sm:hidden">
-        <Ferrofluid
-          colors={["#ffffff", "#a855f7", "#ffffff"]}
-          speed={0.5}
-          scale={1}
-          turbulence={1}
-          fluidity={0.1}
-          rimWidth={0.2}
-          sharpness={3}
-          shimmer={1}
-          glow={2}
-          flowDirection="down"
-          opacity={1}
-          mouseInteraction
-          mouseStrength={1}
-          mouseRadius={0.3}
+        <SideRays
+          speed={2.5}
+          rayColor1="#EAB308"
+          rayColor2="#96c8ff"
+          intensity={2}
+          spread={2}
+          origin="top-right"
+          tilt={0}
+          saturation={1.5}
+          blend={0.75}
+          falloff={1.6}
+          opacity={1.0}
         />
       </div>
       <div className="edge-fade-both pointer-events-none absolute inset-0 hidden sm:block">

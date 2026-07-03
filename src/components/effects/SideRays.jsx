@@ -87,10 +87,16 @@ const SideRays = ({
 
       if (!containerRef.current) return;
 
-      const renderer = new Renderer({
-        dpr: Math.min(window.devicePixelRatio, 2),
-        alpha: true,
-      });
+      let renderer;
+      try {
+        renderer = new Renderer({
+          dpr: Math.min(window.devicePixelRatio, 2),
+          alpha: true,
+        });
+      } catch (err) {
+        console.error("SideRays: failed to initialize WebGL, skipping effect.", err);
+        return;
+      }
       rendererRef.current = renderer;
 
       const gl = renderer.gl;
