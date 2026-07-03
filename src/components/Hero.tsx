@@ -1,4 +1,7 @@
 import LineWaves from "@/components/effects/LineWaves";
+import DotField from "@/components/effects/DotField";
+import LaserFlow from "@/components/effects/LaserFlow";
+import MagicRings from "@/components/effects/MagicRings";
 import Magnet from "@/components/effects/Magnet";
 import Reveal from "@/components/effects/Reveal";
 import SplitText from "@/components/effects/SplitText";
@@ -29,7 +32,47 @@ export default function Hero() {
       id="top"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="edge-fade-bottom absolute inset-x-0 top-0 aspect-video sm:inset-0 sm:aspect-auto">
+      <div className="pointer-events-none absolute inset-0 sm:hidden">
+        <div className="edge-fade-bottom absolute inset-0">
+          <DotField
+            dotRadius={2}
+            dotSpacing={20}
+            cursorRadius={400}
+            bulgeStrength={70}
+            glowRadius={0}
+            gradientFrom="rgba(255, 255, 255, 0.5)"
+            gradientTo="rgba(168, 85, 247, 0.35)"
+            glowColor="#ffffff"
+          />
+        </div>
+        <div className="absolute inset-0 opacity-70">
+          <LaserFlow
+            color="#a855f7"
+            horizontalBeamOffset={0}
+            verticalBeamOffset={0.15}
+            wispDensity={1.1}
+            wispIntensity={4}
+            fogIntensity={0.35}
+            flowSpeed={0.3}
+            mouseTiltStrength={0.006}
+          />
+        </div>
+        <div className="absolute -right-10 -top-10 h-64 w-64 opacity-50">
+          <MagicRings
+            color="#a855f7"
+            colorTwo="#e879f9"
+            ringCount={5}
+            attenuation={12}
+            lineThickness={1.5}
+            baseRadius={0.3}
+            radiusStep={0.09}
+            scaleRate={0.08}
+            opacity={0.8}
+            noiseAmount={0.05}
+          />
+        </div>
+      </div>
+      <div className="edge-fade-bottom absolute inset-0 hidden sm:block">
         <LineWaves
           speed={0.1}
           innerLineCount={45}
@@ -77,7 +120,7 @@ export default function Hero() {
           <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
             <SplitText
               tag="span"
-              text="Modernize. Automate. Scale with confidence."
+              text="Modernize. Automate."
               splitType="chars"
               delay={20}
               duration={0.8}
@@ -123,10 +166,10 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal className="pointer-events-auto" delay={150}>
+        <Reveal className="pointer-events-auto mx-auto w-full max-w-sm md:mx-0" delay={150}>
           <BorderGlow
             backgroundColor="#0a0b10"
-            borderRadius={24}
+            borderRadius={20}
             glowRadius={30}
             glowIntensity={0}
             edgeSensitivity={35}
@@ -134,13 +177,13 @@ export default function Hero() {
             colors={["#a855f7", "#e879f9", "#c084fc"]}
             fillOpacity={0}
           >
-            <div className="p-6 sm:p-7">
+            <div className="p-4 sm:p-5">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="font-display text-lg font-semibold text-purple-300">
+                  <p className="font-display text-base font-semibold text-purple-300">
                     Business Growth System
                   </p>
-                  <p className="mt-1 text-sm text-zinc-400">
+                  <p className="mt-1 text-xs text-zinc-400">
                     Operations, customers, data, and delivery aligned
                   </p>
                 </div>
@@ -150,32 +193,32 @@ export default function Hero() {
                 </span>
               </div>
 
-              <div className="mt-6 space-y-3">
+              <div className="mt-4 space-y-2">
                 {heroHighlights.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3"
+                    className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2"
                   >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-purple-400/30 bg-purple-500/10 text-purple-300">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-purple-400/30 bg-purple-500/10 text-purple-300">
                       {item.icon.kind === "why" ? (
-                        <WhyIcon name={item.icon.name} className="h-4 w-4" />
+                        <WhyIcon name={item.icon.name} className="h-3.5 w-3.5" />
                       ) : (
-                        <ServiceIcon name={item.icon.name} className="h-4 w-4" />
+                        <ServiceIcon name={item.icon.name} className="h-3.5 w-3.5" />
                       )}
                     </span>
-                    <span className="text-sm font-medium text-zinc-100">{item.label}</span>
+                    <span className="text-xs font-medium text-zinc-100">{item.label}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="mt-3 grid grid-cols-3 gap-2">
                 {heroMilestones.map((m) => (
                   <div
                     key={m.step}
-                    className="rounded-xl border border-white/10 bg-white/[0.02] px-3 py-4 text-center"
+                    className="rounded-lg border border-white/10 bg-white/[0.02] px-2 py-2.5 text-center"
                   >
-                    <p className="font-display text-xl font-semibold text-white">{m.step}</p>
-                    <p className="mt-1 text-[11px] leading-tight text-zinc-400">{m.label}</p>
+                    <p className="font-display text-base font-semibold text-white">{m.step}</p>
+                    <p className="mt-1 text-[10px] leading-tight text-zinc-400">{m.label}</p>
                   </div>
                 ))}
               </div>
