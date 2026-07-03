@@ -11,7 +11,7 @@ export default function Approach() {
       id="work"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="edge-fade-both pointer-events-none absolute inset-0">
+      <div className="edge-fade-both pointer-events-none absolute inset-x-0 top-0 aspect-video sm:inset-0 sm:aspect-auto">
         <ColorBends
            colors={["#a855f7"]}
           // colors={["#ffffff"]}

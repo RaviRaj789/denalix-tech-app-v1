@@ -29,7 +29,7 @@ export default function Hero() {
       id="top"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="edge-fade-bottom absolute inset-0">
+      <div className="edge-fade-bottom absolute inset-x-0 top-0 aspect-video sm:inset-0 sm:aspect-auto">
         <LineWaves
           speed={0.1}
           innerLineCount={45}
@@ -40,8 +40,8 @@ export default function Hero() {
           colorCycleSpeed={1.0}
           brightness={0.2}
           color1="#ffffff"
-          color2="#ffffff"
-          color3="#a855f7"
+          color2="#a855f7"
+          color3="#ffffff"
           enableMouseInteraction
           mouseInfluence={2.0}
         />
@@ -134,7 +134,7 @@ export default function Hero() {
             colors={["#a855f7", "#e879f9", "#c084fc"]}
             fillOpacity={0}
           >
-            <div className="p-5 sm:p-6">
+            <div className="p-6 sm:p-7">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="font-display text-lg font-semibold text-purple-300">
