@@ -1,6 +1,4 @@
-import ColorBends from "@/components/effects/ColorBends";
 import DotField from "@/components/effects/DotField";
-import Ferrofluid from "@/components/effects/Ferrofluid";
 import RoadmapSteps from "@/components/effects/RoadmapSteps";
 import SplitText from "@/components/effects/SplitText";
 import BlurText from "@/components/effects/BlurText";
@@ -12,38 +10,7 @@ export default function Approach() {
       id="work"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="pointer-events-none absolute inset-0 sm:hidden">
-        <Ferrofluid
-          colors={["#ffffff", "#a855f7", "#ffffff"]}
-          speed={0.5}
-          scale={1}
-          turbulence={1}
-          fluidity={0.1}
-          rimWidth={0.2}
-          sharpness={3}
-          shimmer={1}
-          glow={2}
-          flowDirection="down"
-          opacity={1}
-          mouseInteraction
-          mouseStrength={1}
-          mouseRadius={0.3}
-        />
-      </div>
-      <div className="edge-fade-both pointer-events-none absolute inset-0 hidden sm:block">
-        <ColorBends
-           colors={["#a855f7"]}
-          // colors={["#ffffff"]}
-          speed={0.2}
-          frequency={1.0}
-          noise={0.15}
-          bandWidth={2.5}
-          rotation={90}
-          iterations={1}
-          intensity={1.3}
-        />
-      </div>
-      <div className="edge-fade-both pointer-events-none absolute inset-0 opacity-40 sm:opacity-20">
+      <div className="edge-fade-both pointer-events-none absolute inset-0">
         <DotField
           dotRadius={3}
           dotSpacing={22}

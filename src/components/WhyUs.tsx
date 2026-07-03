@@ -5,9 +5,7 @@ import SplitText from "@/components/effects/SplitText";
 import BlurText from "@/components/effects/BlurText";
 import Reveal from "@/components/effects/Reveal";
 import BorderGlow from "@/components/effects/BorderGlow";
-import ColorBends from "@/components/effects/ColorBends";
 import DotField from "@/components/effects/DotField";
-import SideRays from "@/components/effects/SideRays";
 import LogoLoop from "@/components/effects/LogoLoop";
 import { WhyIcon } from "@/components/icons";
 
@@ -46,34 +44,7 @@ export default function WhyUs() {
       id="why-us"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="pointer-events-none absolute inset-0 sm:hidden">
-        <SideRays
-          speed={2.5}
-          rayColor1="#EAB308"
-          rayColor2="#96c8ff"
-          intensity={2}
-          spread={2}
-          origin="top-right"
-          tilt={0}
-          saturation={1.5}
-          blend={0.75}
-          falloff={1.6}
-          opacity={1.0}
-        />
-      </div>
-      <div className="edge-fade-both pointer-events-none absolute inset-0 hidden sm:block">
-        <ColorBends
-          colors={["#a855f7"]}
-          speed={0.2}
-          frequency={1.0}
-          noise={0.15}
-          bandWidth={2.5}
-          rotation={90}
-          iterations={1}
-          intensity={1.3}
-        />
-      </div>
-      <div className="edge-fade-both pointer-events-none absolute inset-0 opacity-40 sm:opacity-20">
+      <div className="edge-fade-both pointer-events-none absolute inset-0">
         <DotField
           dotRadius={3}
           dotSpacing={22}
