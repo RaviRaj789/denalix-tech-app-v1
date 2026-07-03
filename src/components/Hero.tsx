@@ -1,3 +1,4 @@
+import LineWaves from "@/components/effects/LineWaves";
 import PixelSnow from "@/components/effects/PixelSnow";
 import Magnet from "@/components/effects/Magnet";
 import Reveal from "@/components/effects/Reveal";
@@ -29,7 +30,7 @@ export default function Hero() {
       id="top"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="edge-fade-bottom pointer-events-none absolute inset-0">
+      <div className="edge-fade-bottom pointer-events-none absolute inset-0 sm:hidden">
         <PixelSnow
           color="#ffffff"
           flakeSize={0.01}
@@ -39,6 +40,23 @@ export default function Hero() {
           density={0.3}
           direction={125}
           brightness={1}
+        />
+      </div>
+      <div className="edge-fade-bottom pointer-events-none absolute inset-0 hidden sm:block">
+        <LineWaves
+          speed={0.1}
+          innerLineCount={45}
+          outerLineCount={45}
+          warpIntensity={1.0}
+          rotation={-45}
+          edgeFadeWidth={0.0}
+          colorCycleSpeed={1.0}
+          brightness={0.2}
+          color1="#ffffff"
+          color2="#a855f7"
+          color3="#ffffff"
+          enableMouseInteraction
+          mouseInfluence={2.0}
         />
       </div>
 

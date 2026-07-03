@@ -1,4 +1,4 @@
-import DotField from "@/components/effects/DotField";
+import PixelSnow from "@/components/effects/PixelSnow";
 import RoadmapSteps from "@/components/effects/RoadmapSteps";
 import SplitText from "@/components/effects/SplitText";
 import BlurText from "@/components/effects/BlurText";
@@ -11,15 +11,15 @@ export default function Approach() {
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
       <div className="edge-fade-both pointer-events-none absolute inset-0">
-        <DotField
-          dotRadius={3}
-          dotSpacing={22}
-          cursorRadius={500}
-          bulgeStrength={80}
-          glowRadius={0}
-          gradientFrom="rgba(255, 255, 255, 0.55)"
-          gradientTo="rgba(255, 255, 255, 0.55)"
-          glowColor="#ffffff"
+        <PixelSnow
+          color="#ffffff"
+          flakeSize={0.01}
+          minFlakeSize={1.25}
+          pixelResolution={200}
+          speed={1.25}
+          density={0.3}
+          direction={125}
+          brightness={1}
         />
       </div>
 

@@ -5,7 +5,8 @@ import SplitText from "@/components/effects/SplitText";
 import BlurText from "@/components/effects/BlurText";
 import Reveal from "@/components/effects/Reveal";
 import BorderGlow from "@/components/effects/BorderGlow";
-import DotField from "@/components/effects/DotField";
+import ColorBends from "@/components/effects/ColorBends";
+import PixelSnow from "@/components/effects/PixelSnow";
 import LogoLoop from "@/components/effects/LogoLoop";
 import { WhyIcon } from "@/components/icons";
 
@@ -44,16 +45,28 @@ export default function WhyUs() {
       id="why-us"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="edge-fade-both pointer-events-none absolute inset-0">
-        <DotField
-          dotRadius={3}
-          dotSpacing={22}
-          cursorRadius={500}
-          bulgeStrength={80}
-          glowRadius={0}
-          gradientFrom="rgba(255, 255, 255, 0.55)"
-          gradientTo="rgba(255, 255, 255, 0.55)"
-          glowColor="#ffffff"
+      <div className="edge-fade-both pointer-events-none absolute inset-0 sm:hidden">
+        <PixelSnow
+          color="#ffffff"
+          flakeSize={0.01}
+          minFlakeSize={1.25}
+          pixelResolution={200}
+          speed={1.25}
+          density={0.3}
+          direction={125}
+          brightness={1}
+        />
+      </div>
+      <div className="edge-fade-both pointer-events-none absolute inset-0 hidden sm:block">
+        <ColorBends
+          colors={["#a855f7"]}
+          speed={0.2}
+          frequency={1.0}
+          noise={0.15}
+          bandWidth={2.5}
+          rotation={90}
+          iterations={1}
+          intensity={1.3}
         />
       </div>
       <div className="relative mx-auto w-full max-w-6xl px-6 py-24">
