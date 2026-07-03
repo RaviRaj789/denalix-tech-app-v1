@@ -1,7 +1,6 @@
 import ColorBends from "@/components/effects/ColorBends";
 import DotField from "@/components/effects/DotField";
-import LaserFlow from "@/components/effects/LaserFlow";
-import MagicRings from "@/components/effects/MagicRings";
+import Orb from "@/components/effects/Orb";
 import RoadmapSteps from "@/components/effects/RoadmapSteps";
 import SplitText from "@/components/effects/SplitText";
 import BlurText from "@/components/effects/BlurText";
@@ -13,33 +12,8 @@ export default function Approach() {
       id="work"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="pointer-events-none absolute inset-0 sm:hidden">
-        <div className="edge-fade-both absolute inset-0 opacity-70">
-          <LaserFlow
-            color="#a855f7"
-            horizontalBeamOffset={0}
-            verticalBeamOffset={0.15}
-            wispDensity={1.1}
-            wispIntensity={4}
-            fogIntensity={0.35}
-            flowSpeed={0.3}
-            mouseTiltStrength={0.006}
-          />
-        </div>
-        <div className="absolute -left-10 -top-10 h-64 w-64 opacity-50">
-          <MagicRings
-            color="#a855f7"
-            colorTwo="#e879f9"
-            ringCount={5}
-            attenuation={12}
-            lineThickness={1.5}
-            baseRadius={0.3}
-            radiusStep={0.09}
-            scaleRate={0.08}
-            opacity={0.8}
-            noiseAmount={0.05}
-          />
-        </div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-dvh sm:hidden">
+        <Orb hue={0} hoverIntensity={0.3} rotateOnHover backgroundColor="#08090c" />
       </div>
       <div className="edge-fade-both pointer-events-none absolute inset-0 hidden sm:block">
         <ColorBends
