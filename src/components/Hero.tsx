@@ -1,5 +1,5 @@
 import LineWaves from "@/components/effects/LineWaves";
-import Orb from "@/components/effects/Orb";
+import Ferrofluid from "@/components/effects/Ferrofluid";
 import Magnet from "@/components/effects/Magnet";
 import Reveal from "@/components/effects/Reveal";
 import SplitText from "@/components/effects/SplitText";
@@ -30,8 +30,23 @@ export default function Hero() {
       id="top"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-dvh sm:hidden">
-        <Orb hue={0} hoverIntensity={0.3} rotateOnHover backgroundColor="#08090c" />
+      <div className="pointer-events-none absolute inset-0 sm:hidden">
+        <Ferrofluid
+          colors={["#ffffff", "#a855f7", "#ffffff"]}
+          speed={0.5}
+          scale={1}
+          turbulence={1}
+          fluidity={0.1}
+          rimWidth={0.2}
+          sharpness={3}
+          shimmer={1}
+          glow={2}
+          flowDirection="down"
+          opacity={1}
+          mouseInteraction
+          mouseStrength={1}
+          mouseRadius={0.3}
+        />
       </div>
       <div className="edge-fade-bottom absolute inset-0 hidden sm:block">
         <LineWaves
