@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -74,6 +75,21 @@ export default function CareersPage() {
             />
           </div>
         </section>
+
+        <div className="relative mx-auto max-w-4xl px-6">
+          <div className="relative h-64 overflow-hidden rounded-3xl border border-white/10 sm:h-80">
+            <Image
+              src="/images/careers/team-office.jpg"
+              alt="The Denalix Tech team working together in the office"
+              fill
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="object-cover grayscale-[15%]"
+              priority={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08090c] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-purple-500/10 mix-blend-overlay" />
+          </div>
+        </div>
 
         <section className="relative mx-auto max-w-4xl px-6 py-16 sm:py-20">
           <h2 className="font-display text-2xl font-medium text-white sm:text-3xl">
