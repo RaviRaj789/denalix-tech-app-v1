@@ -1,3 +1,4 @@
+import ColorBends from "@/components/effects/ColorBends";
 import PixelSnow from "@/components/effects/PixelSnow";
 import RoadmapSteps from "@/components/effects/RoadmapSteps";
 import SplitText from "@/components/effects/SplitText";
@@ -10,7 +11,7 @@ export default function Approach() {
       id="work"
       className="snap-section relative flex min-h-dvh items-center overflow-hidden bg-[#08090c]"
     >
-      <div className="edge-fade-both pointer-events-none absolute inset-0">
+      <div className="edge-fade-both pointer-events-none absolute inset-0 sm:hidden">
         <PixelSnow
           color="#ffffff"
           flakeSize={0.01}
@@ -20,6 +21,18 @@ export default function Approach() {
           density={0.3}
           direction={125}
           brightness={1}
+        />
+      </div>
+      <div className="edge-fade-both pointer-events-none absolute inset-0 hidden sm:block">
+        <ColorBends
+          colors={["#a855f7"]}
+          speed={0.2}
+          frequency={1.0}
+          noise={0.15}
+          bandWidth={2.5}
+          rotation={90}
+          iterations={1}
+          intensity={1.3}
         />
       </div>
 
