@@ -13,7 +13,8 @@ export default function Approach() {
     >
       <div className="edge-fade-both pointer-events-none absolute inset-0">
         <ColorBends
-          colors={["#a855f7"]}
+           colors={["#a855f7"]}
+          // colors={["#ffffff"]}
           speed={0.2}
           frequency={1.0}
           noise={0.15}

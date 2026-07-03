@@ -31,23 +31,23 @@ export default function Hero() {
     >
       <div className="edge-fade-bottom absolute inset-0">
         <LineWaves
-          speed={0.3}
-          innerLineCount={32}
-          outerLineCount={36}
+          speed={0.1}
+          innerLineCount={45}
+          outerLineCount={45}
           warpIntensity={1.0}
           rotation={-45}
           edgeFadeWidth={0.0}
           colorCycleSpeed={1.0}
           brightness={0.2}
-          color1="#c642c2"
-          color2="#b029d8"
-          color3="#a3acc7"
+          color1="#ffffff"
+          color2="#ffffff"
+          color3="#a855f7"
           enableMouseInteraction
           mouseInfluence={2.0}
         />
       </div>
 
-      <div className="pointer-events-none relative mx-auto grid w-full max-w-6xl items-center gap-12 px-6 pb-28 pt-24 sm:pt-32 lg:grid-cols-[1fr_420px]">
+      <div className="pointer-events-none relative mx-auto grid w-full max-w-6xl items-center gap-12 px-6 pb-28 pt-24 sm:pt-32 md:grid-cols-2">
         <div className="max-w-xl">
           <div className="mb-6 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple-400" />
@@ -74,10 +74,10 @@ export default function Hero() {
               />
             </span>
           </div>
-          <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-7xl">
+          <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
             <SplitText
               tag="span"
-              text="Modernize. Automate."
+              text="Modernize. Automate. Scale with confidence."
               splitType="chars"
               delay={20}
               duration={0.8}
@@ -95,7 +95,7 @@ export default function Hero() {
               from={{ opacity: 0, y: 24 }}
               to={{ opacity: 1, y: 0 }}
               textAlign="left"
-              className="text-purple-300"
+              className="text-white"
             />
           </h1>
           <BlurText
@@ -125,7 +125,7 @@ export default function Hero() {
 
         <Reveal className="pointer-events-auto" delay={150}>
           <BorderGlow
-            backgroundColor="rgba(10, 11, 16, 0.78)"
+            backgroundColor="#0a0b10"
             borderRadius={24}
             glowRadius={30}
             glowIntensity={0}
@@ -134,7 +134,7 @@ export default function Hero() {
             colors={["#a855f7", "#e879f9", "#c084fc"]}
             fillOpacity={0}
           >
-            <div className="p-6 sm:p-7">
+            <div className="p-5 sm:p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="font-display text-lg font-semibold text-purple-300">

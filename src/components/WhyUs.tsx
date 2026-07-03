@@ -69,7 +69,7 @@ export default function WhyUs() {
           glowColor="#ffffff"
         />
       </div>
-      <div className="relative mx-auto max-w-6xl px-6 py-24">
+      <div className="relative mx-auto w-full max-w-6xl px-6 py-24">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

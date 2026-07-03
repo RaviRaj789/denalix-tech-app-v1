@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import BorderGlow from "@/components/effects/BorderGlow";
-import TextType from "@/components/effects/TextType";
+import BlurText from "@/components/effects/BlurText";
 import type { ApproachStep } from "@/data/approachSteps";
 
 const LINE_DURATION = 1.4;
@@ -59,9 +59,9 @@ export default function RoadmapSteps({ steps }: { steps: ApproachStep[] }) {
               <span className="relative">{item.step}</span>
             </Link>
 
-            <Link href={`/how-it-works/${item.slug}`} className="group block flex-1 pb-2">
+            <Link href={`/how-it-works/${item.slug}`} className="group block max-w-xl flex-1 pb-2">
               <BorderGlow
-                backgroundColor="transparent"
+                backgroundColor="#0a0b10"
                 borderRadius={20}
                 glowRadius={30}
                 glowIntensity={0}
@@ -79,14 +79,10 @@ export default function RoadmapSteps({ steps }: { steps: ApproachStep[] }) {
                       →
                     </span>
                   </div>
-                  <TextType
-                    as="p"
-                    text={[item.description]}
-                    typingSpeed={16}
-                    loop={false}
-                    startOnVisible
-                    showCursor
-                    cursorCharacter="_"
+                  <BlurText
+                    text={item.description}
+                    animateBy="words"
+                    direction="top"
                     className="mt-2 max-w-xl text-sm leading-6 text-zinc-400"
                   />
                 </div>

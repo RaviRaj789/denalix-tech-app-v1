@@ -31,7 +31,7 @@ export default function Services() {
           mouseInfluence={0.2}
         />
       </div>
-      <div className="relative mx-auto max-w-6xl px-6 py-24">
+      <div className="relative mx-auto w-full max-w-6xl px-6 py-24">
         <SplitText
           tag="h2"
           text="The specific ways Denalix Tech can help"

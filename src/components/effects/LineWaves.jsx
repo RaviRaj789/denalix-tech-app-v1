@@ -80,6 +80,7 @@ vec2 rotate2D(vec2 p, float angle) {
 void main() {
   vec2 coords = gl_FragCoord.xy / uResolution.xy;
   coords = coords * 2.0 - 1.0;
+  coords.x *= uResolution.z;
   coords = rotate2D(coords, uRotation);
 
   float halfT = uTime * uSpeed * 0.5;
@@ -87,7 +88,9 @@ void main() {
 
   float mouseWarp = 0.0;
   if (uEnableMouse) {
-    vec2 mPos = rotate2D(uMouse * 2.0 - 1.0, uRotation);
+    vec2 mPosRaw = uMouse * 2.0 - 1.0;
+    mPosRaw.x *= uResolution.z;
+    vec2 mPos = rotate2D(mPosRaw, uRotation);
     float mDist = length(coords - mPos);
     mouseWarp = uMouseInfluence * exp(-mDist * mDist * 4.0);
   }
